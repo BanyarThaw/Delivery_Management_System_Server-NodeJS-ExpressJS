@@ -6,7 +6,7 @@ const express = require("express"),
 
 // Enable CORS for specific origins and HTTP methods
 app.use(cors({
-  origin: 'http://127.0.0.1:3000', // Allow requests from this origin
+  origin: 'http://localhost:3000', // Allow requests from this origin
 }));
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,7 +22,7 @@ app.get("/api/users", (req, res) => res.json(getJson("users")));
 app.get("/api/users/:id", (req, res) => {
   const users = getJson("users");
   const id = req.params.id;
-  user = users.find(e => e.id == id);
+  const user = users.find(e => e.id == id);
   return res.json(user);
 });
 
@@ -30,7 +30,7 @@ app.get("/api/clients", (req, res) => res.json(getJson("clients")));
 app.get("/api/clients/:id", (req, res) => {
   const clients = getJson("clients");
   const id = req.params.id;
-  client = clients.find(e => e.id == id);
+  const client = clients.find(e => e.id == id);
   return res.json(client);
 });
 
@@ -38,7 +38,7 @@ app.get("/api/shipments", (req, res) => res.json(getJson("shipments")));
 app.get("/api/shipments/:id", (req, res) => {
   const shipments = getJson("shipments");
   const id = req.params.id;
-  shipment = shipments.find(e => e.id == id);
+  const shipment = shipments.find(e => e.id == id);
   return res.json(shipment);
 });
 
@@ -46,7 +46,7 @@ app.get("/api/statuses", (req, res) => res.json(getJson("statuses")));
 app.get("/api/statuses/:id", (req, res) => {
   const statuses = getJson("statuses");
   const id = req.params.id;
-  status = statuses.find(e => e.id == id);
+  const status = statuses.find(e => e.id == id);
   return res.json(status);
 });
 
